@@ -6,3 +6,7 @@ instance/
 data/mnist.npz
 *.zip
 .ipynb_checkpoints/
+.tools/
+models/htr/*.onnx
+models/htr/*.json
+models/htr/*.partial

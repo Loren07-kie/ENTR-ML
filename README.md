@@ -66,3 +66,7 @@ Código y gráficos originales del proyecto bajo MIT. Los conjuntos UCI y MNIST 
 ## Corrección de lectura de fotos grandes (6 de noviembre)
 
 El OCR limita la imagen a 1300 píxeles en su lado mayor, corrige inclinaciones leves de las líneas y normaliza iluminación. Tesseract usa un hilo y un límite de 75 segundos. Los errores de tiempo, instalación y procesamiento se distinguen. `/health` verifica también los idiomas del OCR. Los campos numéricos sencillos detectados automáticamente se envían al modelo de dígitos. Ver `docs/Correccion_OCR.md`.
+
+## Lector versión 2: gratuito y sin API
+
+Ejecutar `python tools/download_htr.py` para activar TrOCR ONNX. La aplicación procesa por trabajos con progreso, separa campos, muestra recortes y alternativas, admite casillas editables y permite marcar regiones de texto o dígitos. El modelo se ejecuta en Render; no se envían fotos a proveedores de IA externos. Sus pesos públicos se descargan durante el build. Ver `docs/Mejoras_Lector_V2.md` y `models/htr/README.md`. Los nombres propios y la escritura cursiva en español todavía pueden fallar: siempre revisar. Los recortes solo se usan para revisar y no se guardan en SQLite.

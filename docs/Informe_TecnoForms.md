@@ -112,3 +112,12 @@ La captura debe hacerse con postura cómoda, buena iluminación y pausas visuale
 - Tesseract: https://tesseract-ocr.github.io/tessdoc/ImproveQuality.html
 - OpenCV: https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html
 - Render: https://render.com/docs/free ; https://render.com/docs/docker
+
+
+## 12. Actualización del lector: versión 2 (6 de noviembre)
+
+Se integró un lector gratuito TrOCR ONNX cuantizado, ejecutado en el servidor sin claves API, para líneas manuscritas. OpenCV separa campos, columnas y tinta; Tesseract localiza rótulos y ofrece una lectura española alternativa. HOG/SVM sigue siendo el componente específico de dígitos. El modelo TrOCR es preentrenado con IAM, principalmente en inglés, y no fue entrenado con las imágenes privadas suministradas.
+
+La aplicación añade revisión por recorte, alternativas editables, casillas, regiones manuales de texto o dígitos, y trabajos asíncronos con progreso y cancelación. Los recortes son temporales y se excluyen de los formularios persistidos. Pasaron 14 pruebas de integración/regresión que incluyen separación de campos, vacíos, casillas, líneas, aislamiento entre usuarios y exclusión de imágenes al guardar.
+
+Las cuatro imágenes proporcionadas se usan como ejemplos de desarrollo, no como test independiente. Persisten limitaciones con nombres, cursiva española, símbolos, números y decoraciones. El usuario debe confirmar las respuestas. No se presenta una exactitud global para formularios ni se traslada el 99% de dígitos aislados al lector completo. Los detalles de implementación están en docs/Mejoras_Lector_V2.md y las atribuciones del modelo en models/htr/README.md.
