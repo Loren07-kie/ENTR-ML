@@ -1,0 +1,6 @@
+.git
+instance
+__pycache__
+data/mnist.npz
+*.zip
+.venv
