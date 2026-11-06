@@ -1,0 +1,17 @@
+{
+  "integration_tests": 4,
+  "integration_result": "PASS",
+  "sample_image_fields": [
+    "24",
+    "18",
+    "150"
+  ],
+  "expected": [
+    "24",
+    "18",
+    "150"
+  ],
+  "sample_result": "PASS",
+  "browser_visual_qa": "Not completed: browser URL policy could not establish current URL",
+  "real_form_photo_benchmark": "Not measured"
+}

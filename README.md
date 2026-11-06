@@ -11,12 +11,10 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate
 # Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-python tools/train.py
-python tools/train_photo.py
 python app.py
 ```
 
-Abre http://localhost:8000. Para OCR automático instala **Tesseract OCR** con los idiomas español e inglés y agrégalo al PATH. El contenedor Docker ya lo incluye. Sin Tesseract siguen funcionando las regiones numéricas y la edición manual.
+Abre http://localhost:8000. Los modelos ya están incluidos. Para reentrenar, ejecuta `python tools/train.py` y `python tools/train_photo.py` (este último descarga MNIST). Para OCR automático instala **Tesseract OCR** con los idiomas español e inglés y agrégalo al PATH. El contenedor Docker ya lo incluye. Sin Tesseract siguen funcionando las regiones numéricas y la edición manual.
 
 ```sh
 docker build -t tecnoforms .

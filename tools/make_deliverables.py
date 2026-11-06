@@ -121,7 +121,7 @@ for x,y,text in nodes:
 for x1,y1,x2,y2 in [(2.8,3.6,3.1,3.6),(5.8,3.6,6.1,3.6),(8.8,3.6,9.1,3.6),(10.45,3,10.45,1.9),(9.1,1.3,8.8,1.3),(6.1,1.3,5.8,1.3),(3.1,1.3,2.8,1.3)]:ax.annotate('',xy=(x2,y2),xytext=(x1,y1),arrowprops=dict(arrowstyle='->',color='#6640a4',lw=2))
 ax.set_title('TecnoForms · arquitectura funcional',fontweight='bold',fontsize=16);fig.tight_layout();fig.savefig(ROOT/'docs/diagrama.png',dpi=160);fig.savefig(ROOT/'docs/diagrama.svg');plt.show()
 ''')
-md('''## 7. Datos ficticios: regresión y K-Means
+md('''## 7. Datos ficticios: regresión, K-Means y red neuronal
 La regresión estima tiempos sintéticos según cantidad de campos y calidad ficticia. Se evalúa con test separado; no mide ahorros reales. K-Means agrupa esos formularios ficticios por características operativas, con escalado. Sus grupos no se equiparan a dígitos y no reemplazan al clasificador supervisado.''')
 code('''from sklearn.linear_model import LinearRegression
 from sklearn.cluster import KMeans
@@ -138,6 +138,15 @@ print('Regresión, test ficticio: MAE',round(mean_absolute_error(e,prediction),3
 scaled=StandardScaler().fit_transform(features)
 km=KMeans(n_clusters=3,n_init=10,random_state=42).fit(scaled)
 print('K-Means ficticio: silhouette',round(silhouette_score(scaled,km.labels_),3))
+from sklearn.neural_network import MLPClassifier
+# A separate neural experiment on explicitly fictitious form records.
+# Labels are generated from a rule, never from the measured target time.
+synthetic_labels=((quality>.65)&(counts<20)).astype(int)
+sa,sb,sc,sd=train_test_split(features,synthetic_labels,test_size=.2,stratify=synthetic_labels,random_state=42)
+from sklearn.pipeline import make_pipeline
+synthetic_mlp=make_pipeline(StandardScaler(),MLPClassifier(hidden_layer_sizes=(16,8),max_iter=600,random_state=42))
+synthetic_mlp.fit(sa,sc)
+print('MLP de datos ficticios, exactitud test:',round(synthetic_mlp.score(sb,sd),3))
 with (ROOT/'data/formularios_ficticios.csv').open('w',newline='',encoding='utf-8') as stream:
     w=csv.writer(stream);w.writerow(['campos','calidad_sintetica','tiempo_sintetico_s','cluster'])
     w.writerows(zip(counts,quality,times,km.labels_))
@@ -171,7 +180,7 @@ Ergonomía: buena luz, postura adecuada y pausas visuales. Ambiente: digitalizar
 |Red y arquitectura|MLP entrenada, sección 5|
 |Entrenamiento, CV e hiperparámetros|`tools/train.py`, sección 3|
 |Test, precisión, recall, F1 y matriz|Sección 4, JSON de métricas|
-|Regresión y K-Means ficticios|Sección 7 y CSV sintético|
+|Regresión, K-Means y red con datos ficticios|Sección 7 y CSV sintético|
 |Predicción versus etiquetas reales|Gráfico de sección 4|
 |Esquema o diagrama alineado|Sección 6, SVG e interfaz|
 |Informe y preguntas guía|Secciones 8–9 y `docs/Informe_TecnoForms.md`|

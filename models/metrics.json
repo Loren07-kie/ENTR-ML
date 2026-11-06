@@ -16,7 +16,7 @@
       "params": {
         "n_neighbors": 3
       },
-      "seconds": 0.46,
+      "seconds": 0.36,
       "confusion_matrix": [
         [
           36,
@@ -225,7 +225,7 @@
         "C": 1,
         "gamma": "scale"
       },
-      "seconds": 2.41,
+      "seconds": 1.66,
       "confusion_matrix": [
         [
           36,
@@ -433,7 +433,7 @@
       "params": {
         "alpha": 0.0001
       },
-      "seconds": 15.09,
+      "seconds": 12.53,
       "confusion_matrix": [
         [
           35,

@@ -27,7 +27,7 @@ Se comparan KNN (k=3,5), SVM RBF (C=1,10) y MLP (alpha=0.0001,0.001). GridSearch
 
 **Motor de regiones:** MNIST, imágenes de 28×28. Se muestrean 15 000 ejemplos oficiales de entrenamiento con semilla 42. Se separan 3 000 para validar C=2 y C=8; se elige C=2 y se reentrena con las 15 000 muestras. La evaluación final usa las 10 000 imágenes oficiales de test. HOG produce 324 características. Este experimento se informa separado del benchmark UCI.
 
-**Datos ficticios:** se generan 240 registros de formularios con cantidad de campos, calidad simulada y tiempo sintético. La regresión lineal usa test separado para estimar tiempos; K-Means con escalado construye 3 grupos operativos. Son evidencias curriculares y no demuestran ahorros empresariales reales.
+**Datos ficticios:** se generan 240 registros de formularios con cantidad de campos, calidad simulada y tiempo sintético. Una MLP adicional aprende una etiqueta ficticia de procesabilidad y se evalúa en test separado. La regresión lineal usa test separado para estimar tiempos; K-Means con escalado construye 3 grupos operativos. Son evidencias curriculares y no demuestran ahorros empresariales reales.
 
 ## 4. Preprocesamiento de imágenes
 
@@ -96,7 +96,7 @@ La captura debe hacerse con postura cómoda, buena iluminación y pausas visuale
 |Entrenamiento, CV y ajuste|GridSearchCV estratificado de 3 pliegues sobre train|
 |Evaluación test e interpretación|360 ejemplos UCI; 10 000 MNIST; límites explícitos|
 |Matriz, precisión, recall y F1 con datos públicos|models/metrics.json, photo_metrics.json y cuaderno|
-|Regresión y K-Means con datos ficticios|Sección 7 del cuaderno, CSV sintético y gráficos|
+|Regresión, K-Means y MLP con datos ficticios|Sección 7 del cuaderno, CSV sintético y gráficos|
 |Predicciones frente a etiquetas reales|docs/predicciones.png y salidas del cuaderno|
 |Informe con decisiones y resultados|Este documento y cuaderno ejecutado|
 |Esquema/diagrama alineado a la propuesta|docs/diagrama.svg, PNG, cuaderno y Cómo funciona|
