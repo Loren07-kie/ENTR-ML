@@ -62,3 +62,7 @@ Render: servicio Docker, rama main, plan gratuito. El Dockerfile instala Tessera
 ## Licencia
 
 Código y gráficos originales del proyecto bajo MIT. Los conjuntos UCI y MNIST conservan sus propios términos y atribuciones. Fuentes tipográficas Google Fonts con respaldo local del navegador; si no hay internet se usan fuentes del sistema.
+
+## Corrección de lectura de fotos grandes (6 de noviembre)
+
+El OCR limita la imagen a 1300 píxeles en su lado mayor, corrige inclinaciones leves de las líneas y normaliza iluminación. Tesseract usa un hilo y un límite de 75 segundos. Los errores de tiempo, instalación y procesamiento se distinguen. `/health` verifica también los idiomas del OCR. Los campos numéricos sencillos detectados automáticamente se envían al modelo de dígitos. Ver `docs/Correccion_OCR.md`.

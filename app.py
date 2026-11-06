@@ -5,7 +5,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from flask import Flask, request, jsonify, session, render_template, Response
 from werkzeug.security import generate_password_hash, check_password_hash
-from vision import decode, extract
+from vision import decode, extract, ocr_status
 ROOT=Path(__file__).parent
 app=Flask(__name__)
 app.config.update(SECRET_KEY=os.environ.get('SECRET_KEY') or secrets.token_hex(32),MAX_CONTENT_LENGTH=12*1024*1024,SESSION_COOKIE_HTTPONLY=True,SESSION_COOKIE_SAMESITE='Lax',SESSION_COOKIE_SECURE=os.environ.get('RENDER')=='true')
@@ -28,7 +28,7 @@ def auth(fn):
 @app.get('/')
 def home():return render_template('index.html')
 @app.get('/health')
-def health():return {'status':'ok','model':(ROOT/'models/digits.joblib').exists()}
+def health():return {'status':'ok','model':(ROOT/'models/digits.joblib').exists(),'ocr':ocr_status()}
 @app.get('/api/me')
 def me():
  with db() as c:u=c.execute('SELECT id,name,email,logins,onboarded FROM users WHERE id=?',(session.get('uid'),)).fetchone()
