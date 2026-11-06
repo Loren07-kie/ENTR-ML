@@ -115,14 +115,14 @@ def heading_blocks(data):
 
 def checkbox_boxes(page):
  gray=cv2.cvtColor(page,cv2.COLOR_RGB2GRAY);binary=cv2.threshold(gray,140,255,cv2.THRESH_BINARY_INV)[1]
- hsv=cv2.cvtColor(page,cv2.COLOR_RGB2HSV);colored=cv2.inRange(hsv,np.array([0,22,150]),np.array([179,255,255]))
+ hsv=cv2.cvtColor(page,cv2.COLOR_RGB2HSV);colored=cv2.inRange(hsv,np.array([0,12,150]),np.array([179,255,255]))
  contours=list(cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)[0])+list(cv2.findContours(colored,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)[0]);boxes=[]
  limit=max(40,int(page.shape[1]*.06));minimum=max(14,int(page.shape[1]*.018))
  for contour in sorted(contours,key=cv2.contourArea,reverse=True):
   x,y,w,h=cv2.boundingRect(contour)
   if not (minimum<=w<=limit and minimum<=h<=limit and .65<w/h<1.5):continue
   poly=cv2.approxPolyDP(contour,.035*cv2.arcLength(contour,True),True)
-  if not 4<=len(poly)<=8 or cv2.contourArea(contour)<w*h*.5:continue
+  if not 4<=len(poly)<=12 or cv2.contourArea(contour)<w*h*.5:continue
   if any(abs(x-a)<w*.5 and abs(y-b)<h*.5 for a,b,_,_ in boxes):continue
   boxes.append((x,y,w,h))
  return sorted(boxes,key=lambda b:(b[1],b[0]))
@@ -177,7 +177,7 @@ def handwriting_lines(mask):
  chunks.append((start,previous+1));result=[]
  tallest=max(b-a for a,b in chunks)
  for a,b in chunks:
-  if b-a<max(5,tallest*.4):continue
+  if b-a<max(5,tallest*.55):continue
   a=max(0,a-3);b=min(mask.shape[0],b+3)
   part=mask[a:b];ys,xs=np.where(part>0)
   if len(xs)<15 or b-a<5:continue
@@ -277,6 +277,11 @@ def read_form(rgb,progress=None):
    lower=[a['box'][1] for a in labels if a is not label and a['box'][1]>b+15 and abs(a['box'][0]-x)<W*.3]
    bottom=min(lower) if lower else b+H*.2
    choices=[(k,c) for k,c in enumerate(checks) if c[0]>=x-15 and y-8<=c[1]<bottom and (abs(c[1]-y)<(b-y)*2.5 or 'emociones' in plain)]
+   if 'emociones' in plain:
+    choices=[(k,c) for k,c in choices if c[1]>=b-3 and c[0]<x+max((r-x)*.4,W*.1)]
+    if choices:
+     anchor=float(np.percentile([c[0] for _,c in choices],20));tolerance=max(15,float(np.median([c[2] for _,c in choices]))*.6)
+     choices=[(k,c) for k,c in choices if abs(c[0]-anchor)<tolerance]
    options=[]
    for k,(cx,cy,cw,ch) in choices:
     handled.add(k);pad=max(3,int(cw*.22));inside=ink[cy+pad:cy+ch-pad,cx+pad:cx+cw-pad]
@@ -286,9 +291,12 @@ def read_form(rgb,progress=None):
     words=[j for j,t in enumerate(data['text']) if t.strip() and data['left'][j]>cx+cw and data['left'][j]<right and abs(data['top'][j]-cy)<ch*.9]
     option=' '.join(data['text'][j] for j in sorted(words,key=lambda j:data['left'][j])).strip()
     option=re.sub(r'^[^\wÀ-ÿ]+','',option).strip().rstrip(':')
-    if not option:
-     crop=ink[max(0,cy-ch//2):min(H,cy+ch+ch//2),cx+cw+3:right]
-     option,_,_,_=recognize(crop,'opción')
+    known_option=re.match(r'^(Femenino|Masculino|Otro)\b',option,re.I)
+    if known_option:option=known_option.group(1)
+    answer_ink=ink[max(0,cy-ch//5):min(H,cy+ch+ch//5),cx+cw+3:min(right,cx+cw+int(W*.2))]
+    if not option or ('emociones' in plain and np.count_nonzero(answer_ink)>25):
+     proposal,_,_,_=recognize(answer_ink,'opción')
+     if proposal:option=proposal
     options.append({'label':option or f'Opción {len(options)+1}','checked':bool(selected)})
    field.update(type='checkbox',options=options,value='; '.join(o['label'] for o in options if o['checked']),confidence=0.,status='uncertain' if any(o['checked'] for o in options) else 'empty',source='Detección visual de casillas')
    field['snippet']=snippet(page,(x,y,W-10,min(H,bottom)))

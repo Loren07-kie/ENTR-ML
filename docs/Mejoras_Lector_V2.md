@@ -29,3 +29,7 @@ El modelo de TrOCR fue entrenado con líneas IAM en inglés. El español cursivo
 Subir una foto y pulsar Digitalizar. El progreso indica la etapa actual. Revisar los campos con advertencia, abrir el recorte y comparar las alternativas. Las opciones de casillas se pueden corregir. Si falta un campo, marcar su región y elegir Texto manuscrito o Dígitos. Confirmar las respuestas antes de guardar o analizar.
 
 Instalación: `pip install -r requirements.txt` y `python tools/download_htr.py`. Docker instala también Tesseract y sus idiomas. Para reproducir pruebas locales con el helper opcional `tools/evaluate_forms.py`, preparar Tesseract.js en `.tools/ocr/`; no se necesita ese helper en Render.
+
+## Comprobación en Render
+
+Los cuatro trabajos de las imágenes proporcionadas finalizaron sin bloqueo. El formulario médico devolvió 14 campos vacíos. Las fichas manuscritas mostraron mejoras en separación de campos y algunos números, fechas y nombres, pero conservaron errores en apellidos, correos, párrafos y opciones. El formulario de emociones sigue siendo difícil. Las salidas con datos personales no se publican. En el servicio gratuito, las pruebas completas tardaron aproximadamente entre 11 y 96 segundos según el caso. No se declara una exactitud global a partir de estos cuatro ejemplos.
