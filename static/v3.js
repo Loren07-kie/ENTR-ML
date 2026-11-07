@@ -108,6 +108,7 @@ async function showBatch(id){
  $('#batch-analyze').onclick=async()=>{await loadForms();$('#analysis-scope').value=id;page('analytics');renderAnalytics()};
  $('#batch-action').onclick=async()=>{try{await api('/api/batches/'+id+(b.status==='running'?'/cancel':'/start'),{method:'POST'});showBatch(id)}catch(e){toast(e.message)}};
  $$('[data-review-form]').forEach(button=>button.onclick=()=>openSaved(button.dataset.reviewForm,'account'));
+ await loadBatches();
  if(b.status==='running'&&$('#folders').classList.contains('active'))batchTimer=setTimeout(()=>showBatch(id),3000);
  }catch(e){toast(e.message)}
 }
