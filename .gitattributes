@@ -1,0 +1,7 @@
+*.pdf binary
+*.joblib binary
+*.png binary
+*.jpg binary
+*.zip binary
+*.onnx binary
+*.bin binary

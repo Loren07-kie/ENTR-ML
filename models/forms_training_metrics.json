@@ -1,0 +1,147 @@
+{
+  "seed": 427,
+  "source": "MNIST official training/test, with separate demo forms",
+  "train": 7000,
+  "augmented_train": 1000,
+  "validation": 1500,
+  "test": 2000,
+  "cv_folds": 3,
+  "cv_f1": 0.9877848633200262,
+  "best_params": {
+    "C": 4
+  },
+  "validation_f1": {
+    "base_svm": 0.9895162348116546,
+    "adapted_svm": 0.9887426299515181
+  },
+  "selected": "base_svm",
+  "accuracy": 0.986,
+  "precision_macro": 0.9861903008143822,
+  "recall_macro": 0.9859219720182726,
+  "f1_macro": 0.9860051112472533,
+  "confusion_matrix": [
+    [
+      206,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      202,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      204,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      197,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      206,
+      0,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      185,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      193,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      190,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      219,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      170
+    ]
+  ],
+  "seconds": 96.64,
+  "scope": "isolated digits normalized as form cells; not universal form/text accuracy",
+  "leakage_control": "validation indices excluded from original base-model training; official test never used for fitting or selection"
+}

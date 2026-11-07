@@ -1,0 +1,107 @@
+[
+  {
+    "id": "educacion",
+    "title": "Educación · progreso del aula",
+    "description": "Notas, asistencia, edades y turnos de seis estudiantes ficticios.",
+    "preview": "/static/examples/educacion/educacion-01.png",
+    "blank": "/static/examples/educacion/plantilla-vacia.png",
+    "folder_zip": "/static/examples/educacion.zip",
+    "files": [
+      {
+        "filename": "educacion-01.png",
+        "url": "/static/examples/educacion/educacion-01.png"
+      },
+      {
+        "filename": "educacion-02.png",
+        "url": "/static/examples/educacion/educacion-02.png"
+      },
+      {
+        "filename": "educacion-03.png",
+        "url": "/static/examples/educacion/educacion-03.png"
+      },
+      {
+        "filename": "educacion-04.png",
+        "url": "/static/examples/educacion/educacion-04.png"
+      },
+      {
+        "filename": "educacion-05.png",
+        "url": "/static/examples/educacion/educacion-05.png"
+      },
+      {
+        "filename": "educacion-06.png",
+        "url": "/static/examples/educacion/educacion-06.png"
+      }
+    ],
+    "count": 6
+  },
+  {
+    "id": "pagos",
+    "title": "Pagos · control de ingresos",
+    "description": "Importes, cantidades y medios de pago de seis registros ficticios.",
+    "preview": "/static/examples/pagos/pagos-01.png",
+    "blank": "/static/examples/pagos/plantilla-vacia.png",
+    "folder_zip": "/static/examples/pagos.zip",
+    "files": [
+      {
+        "filename": "pagos-01.png",
+        "url": "/static/examples/pagos/pagos-01.png"
+      },
+      {
+        "filename": "pagos-02.png",
+        "url": "/static/examples/pagos/pagos-02.png"
+      },
+      {
+        "filename": "pagos-03.png",
+        "url": "/static/examples/pagos/pagos-03.png"
+      },
+      {
+        "filename": "pagos-04.png",
+        "url": "/static/examples/pagos/pagos-04.png"
+      },
+      {
+        "filename": "pagos-05.png",
+        "url": "/static/examples/pagos/pagos-05.png"
+      },
+      {
+        "filename": "pagos-06.png",
+        "url": "/static/examples/pagos/pagos-06.png"
+      }
+    ],
+    "count": 6
+  },
+  {
+    "id": "encuesta",
+    "title": "Encuesta · experiencia del servicio",
+    "description": "Satisfacción, recomendación y comentarios de seis participantes ficticios.",
+    "preview": "/static/examples/encuesta/encuesta-01.png",
+    "blank": "/static/examples/encuesta/plantilla-vacia.png",
+    "folder_zip": "/static/examples/encuesta.zip",
+    "files": [
+      {
+        "filename": "encuesta-01.png",
+        "url": "/static/examples/encuesta/encuesta-01.png"
+      },
+      {
+        "filename": "encuesta-02.png",
+        "url": "/static/examples/encuesta/encuesta-02.png"
+      },
+      {
+        "filename": "encuesta-03.png",
+        "url": "/static/examples/encuesta/encuesta-03.png"
+      },
+      {
+        "filename": "encuesta-04.png",
+        "url": "/static/examples/encuesta/encuesta-04.png"
+      },
+      {
+        "filename": "encuesta-05.png",
+        "url": "/static/examples/encuesta/encuesta-05.png"
+      },
+      {
+        "filename": "encuesta-06.png",
+        "url": "/static/examples/encuesta/encuesta-06.png"
+      }
+    ],
+    "count": 6
+  }
+]

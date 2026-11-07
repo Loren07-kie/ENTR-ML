@@ -5,7 +5,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN tesseract --list-langs | grep -q spa && tesseract --list-langs | grep -q eng
 COPY . .
-RUN python tools/train.py && python tools/train_photo.py
+RUN python -c "import joblib; from model_io import load_model; joblib.load('models/digits.joblib'); joblib.load('models/photo.joblib'); load_model('models/forms_digits.joblib')"
 RUN python tools/download_htr.py
 ENV OMP_THREAD_LIMIT=1
 CMD ["sh", "-c", "exec gunicorn --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:${PORT:-8000} app:app"]

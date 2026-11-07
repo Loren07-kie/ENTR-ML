@@ -1,0 +1,9 @@
+{
+  "parts": [
+    "part-000.bin",
+    "part-001.bin",
+    "part-002.bin",
+    "part-003.bin"
+  ],
+  "sha256": "234c692a2bf119584ba9d29c8b7a1eb0c00a4eed2eae70baa50c89b2cf936083"
+}

@@ -1,0 +1,26 @@
+{
+  "forms": 18,
+  "fields": 84,
+  "correct_fields": 84,
+  "exact_field_accuracy": 1.0,
+  "by_use_case": {
+    "educacion": {
+      "forms": 6,
+      "fields": 30,
+      "correct_fields": 30
+    },
+    "pagos": {
+      "forms": 6,
+      "fields": 24,
+      "correct_fields": 24
+    },
+    "encuesta": {
+      "forms": 6,
+      "fields": 30,
+      "correct_fields": 30
+    }
+  },
+  "evaluation": "public fictitious demonstration images using MNIST official test glyphs; no fitting/selection on these answers",
+  "normalization": "case/diacritics/punctuation ignored; numeric/content errors remain errors",
+  "input": "JPEG quality 90, as stored in folder uploads"
+}

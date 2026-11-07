@@ -10,3 +10,7 @@ data/mnist.npz
 models/htr/*.onnx
 models/htr/*.json
 models/htr/*.partial
+docs/revision-informe.png
+**/node_modules/
+models/forms_candidate.joblib
+models/forms_digits.joblib

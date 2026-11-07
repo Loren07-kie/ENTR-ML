@@ -4,3 +4,7 @@ __pycache__
 data/mnist.npz
 *.zip
 .venv
+.tools
+.env
+**/__pycache__
+!static/examples/*.zip

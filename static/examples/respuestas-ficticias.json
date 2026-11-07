@@ -1,0 +1,212 @@
+[
+  {
+    "file": "educacion/educacion-01.png",
+    "template": "educacion",
+    "answers": {
+      "Participante": "1001",
+      "Edad": "18",
+      "Nota": "12",
+      "Asistencia": "70",
+      "Turno": "Mañana"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "educacion/educacion-02.png",
+    "template": "educacion",
+    "answers": {
+      "Participante": "1002",
+      "Edad": "20",
+      "Nota": "15",
+      "Asistencia": "85",
+      "Turno": "Tarde"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "educacion/educacion-03.png",
+    "template": "educacion",
+    "answers": {
+      "Participante": "1003",
+      "Edad": "19",
+      "Nota": "18",
+      "Asistencia": "95",
+      "Turno": "Mañana"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "educacion/educacion-04.png",
+    "template": "educacion",
+    "answers": {
+      "Participante": "1004",
+      "Edad": "22",
+      "Nota": "16",
+      "Asistencia": "90",
+      "Turno": "Tarde"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "educacion/educacion-05.png",
+    "template": "educacion",
+    "answers": {
+      "Participante": "1005",
+      "Edad": "18",
+      "Nota": "20",
+      "Asistencia": "100",
+      "Turno": "Mañana"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "educacion/educacion-06.png",
+    "template": "educacion",
+    "answers": {
+      "Participante": "1006",
+      "Edad": "21",
+      "Nota": "14",
+      "Asistencia": "80",
+      "Turno": "Tarde"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "pagos/pagos-01.png",
+    "template": "pagos",
+    "answers": {
+      "Participante": "2001",
+      "Importe": "150",
+      "Cantidad": "2",
+      "Canal": "Efectivo"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "pagos/pagos-02.png",
+    "template": "pagos",
+    "answers": {
+      "Participante": "2002",
+      "Importe": "220",
+      "Cantidad": "3",
+      "Canal": "Transferencia"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "pagos/pagos-03.png",
+    "template": "pagos",
+    "answers": {
+      "Participante": "2003",
+      "Importe": "100",
+      "Cantidad": "1",
+      "Canal": "Efectivo"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "pagos/pagos-04.png",
+    "template": "pagos",
+    "answers": {
+      "Participante": "2004",
+      "Importe": "350",
+      "Cantidad": "5",
+      "Canal": "Transferencia"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "pagos/pagos-05.png",
+    "template": "pagos",
+    "answers": {
+      "Participante": "2005",
+      "Importe": "180",
+      "Cantidad": "2",
+      "Canal": "Transferencia"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "pagos/pagos-06.png",
+    "template": "pagos",
+    "answers": {
+      "Participante": "2006",
+      "Importe": "200",
+      "Cantidad": "4",
+      "Canal": "Efectivo"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "encuesta/encuesta-01.png",
+    "template": "encuesta",
+    "answers": {
+      "Participante": "3001",
+      "Edad": "24",
+      "Satisfacción": "5",
+      "Recomendaría": "Sí",
+      "Comentario": "El servicio fue rápido y claro"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "encuesta/encuesta-02.png",
+    "template": "encuesta",
+    "answers": {
+      "Participante": "3002",
+      "Edad": "30",
+      "Satisfacción": "4",
+      "Recomendaría": "Sí",
+      "Comentario": "Me gustó la atención"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "encuesta/encuesta-03.png",
+    "template": "encuesta",
+    "answers": {
+      "Participante": "3003",
+      "Edad": "22",
+      "Satisfacción": "3",
+      "Recomendaría": "No",
+      "Comentario": "Podrían reducir la espera"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "encuesta/encuesta-04.png",
+    "template": "encuesta",
+    "answers": {
+      "Participante": "3004",
+      "Edad": "28",
+      "Satisfacción": "5",
+      "Recomendaría": "Sí",
+      "Comentario": "Buena atención y rapidez"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "encuesta/encuesta-05.png",
+    "template": "encuesta",
+    "answers": {
+      "Participante": "3005",
+      "Edad": "35",
+      "Satisfacción": "2",
+      "Recomendaría": "No",
+      "Comentario": "Necesito instrucciones más claras"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  },
+  {
+    "file": "encuesta/encuesta-06.png",
+    "template": "encuesta",
+    "answers": {
+      "Participante": "3006",
+      "Edad": "26",
+      "Satisfacción": "4",
+      "Recomendaría": "Sí",
+      "Comentario": "Fue fácil completar el trámite"
+    },
+    "split": "MNIST official test / demo evaluation only"
+  }
+]

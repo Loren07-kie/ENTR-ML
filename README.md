@@ -24,11 +24,15 @@ python -m unittest discover -s tests -v
 
 ## Usar
 
-1. Crea una cuenta con correo y contraseña de al menos 8 caracteres. El cuestionario y guía aparecen una sola vez, en el primer ingreso; se conservan por cuenta.
-2. Sube PNG/JPG/WEBP de hasta 12 MB y 24 megapíxeles. La foto no se almacena. Rótulos impresos y texto legible se intentan leer con Tesseract.
-3. Para respuestas numéricas manuscritas, pulsa **Marcar campos** y dibuja una región por respuesta, sin incluir el rótulo. Nombra cada campo; gira la foto si es necesario. Pulsa Digitalizar.
-4. Corrige los valores, añade respuestas de texto manualmente y marca Revisado. Guarda el formulario.
-5. Consulta estadísticas agrupadas por nombre de campo y exporta CSV desde Mis formularios. No se agregan campos de identificadores comunes.
+1. Sube una imagen y pulsa Digitalizar, sin iniciar sesión. Revisa, corrige y confirma los campos.
+2. Guarda sin cuenta en este navegador o descarga CSV. En «Mis formularios» puedes abrir la imagen y todas las respuestas guardadas.
+3. Crea una cuenta gratuita para guardar en PostgreSQL y subir carpetas de hasta 30 imágenes. El Club no tiene cobros.
+4. En «3 ejemplos» prueba educación, pagos o encuestas: seis formularios ficticios por carpeta, plantillas vacías y ZIP descargables.
+5. Revisa cada borrador de una carpeta; el análisis definitivo incluye solo los revisados. Puedes activar un análisis provisional explícito, filtrar por carpeta y exportar CSV o respaldo ZIP.
+
+La base gratuita de Render vence el **6 de diciembre de 2026**. Descarga copias antes de esa fecha. DATABASE_URL se enlaza mediante render.yaml sin publicar credenciales. Sin esa variable se usa SQLite para desarrollo.
+
+Consulta [la guía V3](docs/Version_3.md) para entrenamiento real, resultados, límites y uso de carpetas. Las fotos se guardan al guardar en cuenta o subir una carpeta; los recortes temporales de reconocimiento no se guardan. Una lectura automática requiere confirmación humana.
 
 ## Evidencias
 
@@ -46,9 +50,9 @@ MLP: 64 → 64 ReLU → 32 ReLU → 10 softmax; Adam y entropía cruzada. La CNN
 
 ## Despliegue
 
-Render: servicio Docker, rama main, plan gratuito. El Dockerfile instala Tesseract y entrena ambos modelos. `PORT` es provisto por Render. Configurar `SECRET_KEY` como variable secreta persistente. `DATA_DIR` define la ruta de SQLite (por defecto `instance/`). Un worker con 4 threads.
+Render: servicio Docker, rama main, plan gratuito. El Dockerfile instala Tesseract y verifica los modelos ya entrenados; los experimentos se reproducen con tools/train*.py. `PORT` es provisto por Render. Configurar `SECRET_KEY` como variable secreta persistente. `DATA_DIR` define la ruta de SQLite (por defecto `instance/`). Un worker con 4 threads.
 
-**Persistencia:** SQLite en el plan gratuito es temporal y se pierde en reinicios/despliegues. Para uso permanente, montar un disco en DATA_DIR o migrar a PostgreSQL. La aplicación lo comunica al usuario. Exportar CSV durante las pruebas. No contiene recuperación de contraseña, verificación de correo ni límites distribuidos de autenticación; es un prototipo académico, no una solución lista para datos sensibles.
+**Persistencia:** la versión publicada usa PostgreSQL mediante DATABASE_URL y conserva formularios, imágenes y cuentas frente a reinicios del servicio. La base gratuita vence el 6 de diciembre de 2026; exportar respaldos antes. Sin DATABASE_URL, SQLite local es temporal en Render. No contiene recuperación de contraseña, verificación de correo ni límites distribuidos de autenticación; es un prototipo académico, no una solución lista para datos sensibles.
 
 ## Fuentes
 
