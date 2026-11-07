@@ -1,0 +1,456 @@
+{
+  "verified_utc": "2026-11-07T02:21:55.462269+00:00",
+  "deployment": "https://tecnoforms-flow.onrender.com",
+  "version": 3,
+  "storage": "postgresql",
+  "forms": 18,
+  "controlled_fields_checked": 84,
+  "controlled_fields_exact": 84,
+  "cases": [
+    {
+      "use": "educacion",
+      "analysis": {
+        "fields": [
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 2,
+                "percent": 33.3,
+                "value": "18"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "20"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "19"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "22"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "21"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Edad",
+            "maximum": 22.0,
+            "mean": 19.667,
+            "median": 19.5,
+            "minimum": 18.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "12"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "15"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "18"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "16"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "20"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "14"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Nota",
+            "maximum": 20.0,
+            "mean": 15.833,
+            "median": 15.5,
+            "minimum": 12.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "70"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "85"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "95"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "90"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "100"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "80"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Asistencia",
+            "maximum": 100.0,
+            "mean": 86.667,
+            "median": 87.5,
+            "minimum": 70.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 3,
+                "percent": 50.0,
+                "value": "Mañana"
+              },
+              {
+                "count": 3,
+                "percent": 50.0,
+                "value": "Tarde"
+              }
+            ],
+            "kind": "checkbox",
+            "label": "Turno",
+            "missing": 0,
+            "multiselect": true,
+            "present": 6
+          }
+        ],
+        "forms_analyzed": 6,
+        "forms_failed": 0,
+        "forms_pending": 0,
+        "forms_reviewed": 6,
+        "forms_total": 6,
+        "participants_identified": 6,
+        "provisional": false
+      }
+    },
+    {
+      "use": "pagos",
+      "analysis": {
+        "fields": [
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "150"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "220"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "100"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "350"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "180"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "200"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Importe",
+            "maximum": 350.0,
+            "mean": 200.0,
+            "median": 190.0,
+            "minimum": 100.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6,
+            "sum": 1200.0
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 2,
+                "percent": 33.3,
+                "value": "2"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "3"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "1"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "5"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "4"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Cantidad",
+            "maximum": 5.0,
+            "mean": 2.833,
+            "median": 2.5,
+            "minimum": 1.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6,
+            "sum": 17.0
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 3,
+                "percent": 50.0,
+                "value": "Efectivo"
+              },
+              {
+                "count": 3,
+                "percent": 50.0,
+                "value": "Transferencia"
+              }
+            ],
+            "kind": "checkbox",
+            "label": "Canal",
+            "missing": 0,
+            "multiselect": true,
+            "present": 6
+          }
+        ],
+        "forms_analyzed": 6,
+        "forms_failed": 0,
+        "forms_pending": 0,
+        "forms_reviewed": 6,
+        "forms_total": 6,
+        "participants_identified": 6,
+        "provisional": false
+      }
+    },
+    {
+      "use": "encuesta",
+      "analysis": {
+        "fields": [
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "24"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "30"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "22"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "28"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "35"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "26"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Edad",
+            "maximum": 35.0,
+            "mean": 27.5,
+            "median": 27.0,
+            "minimum": 22.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 2,
+                "percent": 33.3,
+                "value": "5"
+              },
+              {
+                "count": 2,
+                "percent": 33.3,
+                "value": "4"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "3"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "2"
+              }
+            ],
+            "kind": "numeric",
+            "label": "Satisfacción",
+            "maximum": 5.0,
+            "mean": 3.833,
+            "median": 4.0,
+            "minimum": 2.0,
+            "missing": 0,
+            "multiselect": false,
+            "present": 6
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 4,
+                "percent": 66.7,
+                "value": "Sí"
+              },
+              {
+                "count": 2,
+                "percent": 33.3,
+                "value": "No"
+              }
+            ],
+            "kind": "checkbox",
+            "label": "Recomendaría",
+            "missing": 0,
+            "multiselect": true,
+            "present": 6
+          },
+          {
+            "answered": 6,
+            "frequencies": [
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "El servicio fue rápido y claro"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "Me gustó la atención"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "Podrían reducir la espera"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "Buena atención y rapidez"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "Necesito instrucciones más claras"
+              },
+              {
+                "count": 1,
+                "percent": 16.7,
+                "value": "Fue fácil completar el trámite"
+              }
+            ],
+            "kind": "categorical",
+            "label": "Comentario",
+            "missing": 0,
+            "multiselect": false,
+            "present": 6
+          }
+        ],
+        "forms_analyzed": 6,
+        "forms_failed": 0,
+        "forms_pending": 0,
+        "forms_reviewed": 6,
+        "forms_total": 6,
+        "participants_identified": 6,
+        "provisional": false
+      }
+    }
+  ],
+  "backup_files": 20,
+  "checks": [
+    "guest single-image reading",
+    "complete stored forms",
+    "private account images",
+    "folder drafts and review",
+    "provisional and definitive analysis",
+    "CSV",
+    "ZIP with images",
+    "account isolation"
+  ],
+  "limitation": "Controlled templates and fictitious answers; not universal handwritten-text accuracy.",
+  "database_expires_local": "2026-12-06"
+}

@@ -74,3 +74,8 @@ El OCR limita la imagen a 1300 píxeles en su lado mayor, corrige inclinaciones 
 ## Lector versión 2: gratuito y sin API
 
 Ejecutar `python tools/download_htr.py` para activar TrOCR ONNX. La aplicación procesa por trabajos con progreso, separa campos, muestra recortes y alternativas, admite casillas editables y permite marcar regiones de texto o dígitos. El modelo se ejecuta en Render; no se envían fotos a proveedores de IA externos. Sus pesos públicos se descargan durante el build. Ver `docs/Mejoras_Lector_V2.md` y `models/htr/README.md`. Los nombres propios y la escritura cursiva en español todavía pueden fallar: siempre revisar. Los recortes solo se usan para revisar y no se guardan en SQLite.
+
+
+## Verificación en Render
+
+La versión 3 se probó con 18 formularios ficticios (tres carpetas). Se recuperaron imágenes y respuestas desde PostgreSQL, se verificaron 84/84 campos controlados y se descargaron CSV y ZIP con imágenes. Ver [evidencia pública](docs/Verificacion_V3.json). No es una medición de precisión para formularios desconocidos o cursiva libre. Los modelos de formularios se guardan en partes con SHA-256 y se cargan con model_io.py.
